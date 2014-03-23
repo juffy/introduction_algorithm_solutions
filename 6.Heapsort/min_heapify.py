@@ -1,20 +1,3 @@
-6.2-1
-=====
-**A**
-
-![6.2-1a.png](6.2-1a.png)
-
-**B**
-
-![6.2-1b.png](6.2-1b.png)
-
-**C**
-
-![6.2-1b.png](6.2-1b.png)
-
-6.2-2
-=====
-```python
 def MIN_HEAPIFY(A, i):
     smallest = i
     l = i.LEFT
@@ -27,5 +10,4 @@ def MIN_HEAPIFY(A, i):
         #exchange A[i], A[smallest]
         A[i], A[smallest] = A[smallest], A[i]
         MIN_HEAPIFY(A, smallest)
-```
 
