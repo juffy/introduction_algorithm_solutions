@@ -1,0 +1,32 @@
+#include <iostream>
+#include "../utils.hh"
+#define N 100
+int compare (const int &a, const int &b);
+int main(int argc, char * argv[])
+{
+    int *S = new int[N];
+    int x;
+    std::cout << "Please input int set S(not more than 100 elements.):" << std::endl;
+    int i = 0;
+    while (i < N && std::cin){
+        std::cin >> S[i];
+        i += 1;
+    }
+    std::cout << "Please input number x:" << std::endl;
+    std::cin >> x;
+    practices::qsort(S, 0, i-1, compare);
+    std::cout << "after sorting:" << std::endl;
+    for (int j = 0; j < i; ++j){
+        std::cout << "index: " << j << " value: " << S[j] << std::endl;
+    }
+    return 0;
+}
+int compare (const int &a, const int &b)
+{
+    if (a < b)
+        return -1;
+    else if(a > b)
+        return 1;
+    else
+        return 0;
+}
