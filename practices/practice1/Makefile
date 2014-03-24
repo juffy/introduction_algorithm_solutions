@@ -1,7 +1,7 @@
 practice1 : practice1.o
 	g++ -o practice1 practice1.o
 
-practice1.o : practice1.cc ../utils.hh
+practice1.o : practice1.cc ../template_utils.cc ../utils.hh
 	g++ -c practice1.cc
 
 clean :

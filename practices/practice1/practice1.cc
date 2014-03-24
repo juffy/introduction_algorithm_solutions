@@ -19,6 +19,18 @@ int main(int argc, char * argv[])
     for (int j = 0; j < i-1; ++j){
         std::cout << "index: " << j << " value: " << S[j] << std::endl;
     }
+
+    std::cout << "check result: " << std::endl;
+    for (int j = 0; j < i-1; ++j){
+        int ret = -1;
+        if ((ret = practices::binary_search(S, x-S[j], j+1, i-2, compare)) != -1){
+            std::cout << "index: " << j << " index: " << ret << std::endl;
+            std::cout << S[j] << " + " << S[ret] << " = " << S[j] + S[ret] << std::endl;
+            std::cout << "check equal: "  << bool((S[j] + S[ret]) == x) << std::endl;
+            return 0;
+        }
+    }
+    std::cout << "not found." << std::endl;
     return 0;
 }
 int compare (const int &a, const int &b)

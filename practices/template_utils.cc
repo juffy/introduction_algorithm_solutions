@@ -25,18 +25,22 @@ template <typename T> int partion(T * A, int p, int r, int (*compare)(const T &a
     return i+1;
 }
 
-template <typename T> int binary_search(const T * (&A), const T v, int p ,int r, int (*compare)(const T &a, const T &b)){
-    if (p >= r && compare(A[p], v) != 0){
+template <typename T> int binary_search(const T * A, const T v, int p ,int r, int (*compare)(const T &a, const T &b)){
+    if (p > r){
+        return -1;
+    }
+    if (p == r && compare(A[p], v) != 0){
         return -1;
     }
     int j = (p + r) / 2;
+    std::cout << "hello" << std::endl;
     if (compare(A[j], v) == 0){
         return j;
     }
     else if (compare(A[j], v) == -1){
-        return binary_search(A, v, p, j);
+        return binary_search(A, v, p, j-1, compare);
     }
     else {
-        return binary_search(A, v, j, r);
+        return binary_search(A, v, j+1, r, compare);
     }
 }
