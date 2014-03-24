@@ -1,20 +1,22 @@
-#include "utils.hh"
 namespace practices {
-    template <typename T> void qsort(T * A, int p, int r, int (*compare)(const T &a, const T &b)){
+    template <typename T> void my_qsort(T * A, int p, int r);
+    template <typename T> int binary_search(const T * A, const T v, int p ,int r);
+    template <typename T> int my_partion(T * A, int p, int r);
+
+    template <typename T> void my_qsort(T * A, int p, int r){
         if (p < r){
-            int q = partion (A, p ,r, compare);
-            qsort(A, p, q-1);
-            qsort(A, q+1, r);
+            int q = my_partion (A, p ,r);
+            my_qsort(A, p, q-1);
+            my_qsort(A, q+1, r);
         }
     }
-    template <typename T> int partion(T * A, int p, int r, int (*compare)(const T &a, const T &b))
+    template <typename T> int my_partion(T * A, int p, int r)
     {
         T x = A[r];
         int i = p-1;
         for (int j = p; j < r; ++j)
         {
-            int ret = compare(A[j], x);
-            if (ret == 0 || ret == -1){
+            if (A[j] < x || A[j] == x){
                 i += 1;
                 T temp = A[i];
                 A[i] = A[j];

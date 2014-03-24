@@ -6,17 +6,17 @@ int main(int argc, char * argv[])
 {
     int *S = new int[N];
     int x;
+    std::cout << "Please input number x:" << std::endl;
+    std::cin >> x;
     std::cout << "Please input int set S(not more than 100 elements.):" << std::endl;
     int i = 0;
     while (i < N && std::cin){
         std::cin >> S[i];
         i += 1;
     }
-    std::cout << "Please input number x:" << std::endl;
-    std::cin >> x;
-    practices::qsort(S, 0, i-1, compare);
+    practices::qsort(S, 0, i-2, compare);
     std::cout << "after sorting:" << std::endl;
-    for (int j = 0; j < i; ++j){
+    for (int j = 0; j < i-1; ++j){
         std::cout << "index: " << j << " value: " << S[j] << std::endl;
     }
     return 0;
