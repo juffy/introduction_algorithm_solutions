@@ -3,6 +3,7 @@
 *.ko
 *.pyc
 *.py
+input*
 
 # Libraries
 *.lib
