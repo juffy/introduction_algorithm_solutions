@@ -7,4 +7,15 @@ practice1.o : practice1.cc matrix_chain_order.hh
 matrix_chain_order.o : matrix_chain_order.cc matrix_chain_order.hh
 	g++ -c matrix_chain_order.cc
 
+practice2 : practice2.o lcseq.o
+	g++ -o practice2 practice2.o lcseq.o
+
+practice2.o : practice2.cc lcs.hh
+	g++ -c practice2.cc
+
+lcseq.o : lcseq.cc lcs.hh
+	g++ -c lcseq.cc
+
+
+
 
