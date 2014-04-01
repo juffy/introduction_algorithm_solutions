@@ -16,6 +16,22 @@ practice2.o : practice2.cc lcs.hh
 lcseq.o : lcseq.cc lcs.hh
 	g++ -c lcseq.cc
 
+practice3 : practice3.o max_sum.o
+	g++ -o practice3 practice3.o max_sum.o
+
+practice3.o : practice3.cc max_sum.hh
+	g++ -c practice3.cc
+
+max_sum.o : max_sum.cc max_sum.hh
+	g++ -c max_sum.cc
+
+clean :
+	rm practice1 practice1.o matrix_chain_order.o \
+	practice2 practice2.o lcseq.o \
+	practice3 practice3.o max_sum.o
+
+
+
 
 
 
